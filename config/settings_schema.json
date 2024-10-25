@@ -1,0 +1,25 @@
+[
+    {
+      /* context about theme schema settings */
+      "name": "theme_info",
+      "theme_name": "Corsena",
+      "theme_author": "ZILL E.",
+      "theme_version": "1.0.0",
+      "theme_documentation_url": "https:\/\/github.com\/Zilleali\/Corsena\/wiki\/Documentation\/",
+      "theme_support_url": "https:\/\/zilleali.com\/",
+    },
+    {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.settings.header__1.content", // some useful context + see trailing comma
+      },
+      {
+        "type": "checkbox",
+        "id": "checkout_customization",
+        "label": "Enables a checkout customization"
+      },
+    ]
+    }
+  
