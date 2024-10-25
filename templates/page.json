@@ -1,0 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: This file used to Show Home Page.
+ *
+ * 
+ * ------------------------------------------------------------
+ */
+ {
+    "sections": {
+      "main": {
+        "type": "main-page",
+        "settings": {
+          "padding_top": 0,
+          "padding_bottom": 0
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  
