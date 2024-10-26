@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Generated Data Theme",
+    "theme_name": "Corsena",
     "theme_version": "1.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/shopify.dev\/docs\/apps\/tools\/development-stores\/generated-data#themes\/",
-    "theme_support_url": "https:\/\/shopify.dev\/docs\/apps\/tools\/development-stores\/generated-data#themes\/"
+    "theme_author": "Developer Zon",
+    "theme_documentation_url": "https:\/\/developerzon.co.uk\/",
+    "theme_support_url": "https:\/\/zilleali.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
