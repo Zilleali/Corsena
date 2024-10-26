@@ -33,7 +33,7 @@
             "SHOPIFY_CLI_THEME_TOKEN": "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}",
             "SHOPIFY_CLI_TTY": "0"
           },
-          "run": "shopify theme push --path=./ --theme=173714080083"
+          "run": "shopify theme push --path=./ --theme=173716734291"
         }
       ]
     }
