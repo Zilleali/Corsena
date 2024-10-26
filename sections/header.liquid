@@ -152,7 +152,7 @@
 -%}
 
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}">
+  {% comment %} <header role="banner" class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}">
     {%- if section.settings.menu != blank -%}
       <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
         <details id="Details-menu-drawer-container" class="menu-drawer-container">
@@ -738,7 +738,80 @@
         {%- endif -%}
       </a>
     </div>
-  </header>
+  </header> {% endcomment %}
+  <header id="qodef-page-mobile-header" role="banner">
+    <div id="qodef-page-mobile-header-inner" class="">
+        <a itemprop="url" class="qodef-mobile-header-logo-link qodef-height--set qodef-source--image" href="{{ shop.url }}" rel="home">
+            <img loading="lazy" width="147" height="30" src="{{ 'logo-dark.png' | asset_url }}" alt="logo main" itemprop="image" />
+        </a>
+
+        <div class="qodef-widget-holder qodef--one">
+            <div class="widget widget_corsen_core_woo_dropdown_cart qodef-mobile-header-widget-area-one">
+                <div class="qodef-widget-dropdown-cart-outer">
+                    <div class="qodef-widget-dropdown-cart-inner">
+                        <a itemprop="url" class="qodef-m-opener" href="{{ routes.cart_url }}">
+                            <span class="qodef-m-opener-text">Cart</span>
+                            <span class="qodef-m-opener-icon">
+                                <!-- SVG Cart Icon -->
+                            </span>
+                            <span class="qodef-m-opener-count">{{ cart.item_count }}</span>
+                        </a>
+                        {% if cart.item_count == 0 %}
+                        <div class="qodef-widget-dropdown-cart-content">
+                            <p class="qodef-m-posts-not-found">No products in the cart.</p>
+                        </div>
+                        {% else %}
+                        <!-- Code to display cart items here -->
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--predefined qodef-mobile-header-opener">
+            <span class="qodef-m-icon qodef--open">
+                <!-- SVG for menu open icon -->
+            </span>
+            <span class="qodef-m-icon qodef--close">
+                <!-- SVG for menu close icon -->
+            </span>
+        </a>
+    </div>
+
+    <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
+        <ul id="menu-main-menu-4">
+            <li class="menu-item">
+                <a href="{{ shop.url }}">
+                    <span class="qodef-menu-item-text">Home</span>
+                </a>
+                <!-- Add nested menu items if necessary -->
+            </li>
+            <li class="menu-item">
+                <a href="{{ shop.url }}/pages/about-us">
+                    <span class="qodef-menu-item-text">About Us</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="javascript:void(0);">
+                    <span class="qodef-menu-item-text">Shop</span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{ routes.collections_url }}">
+                            <span class="qodef-menu-item-text">Shop All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ shop.url }}/collections/sale">
+                            <span class="qodef-menu-item-text">Sale</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
